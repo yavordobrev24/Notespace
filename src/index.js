@@ -16,8 +16,39 @@ async function connectDb() {
 }
 
 connectDb();
+
 app.get("/", (req, res) => {
-  res.send("It works!");
+  res.send("Home");
+});
+app.get("/login", (req, res) => {
+  res.send("Login");
+});
+app.post("/login", (req, res) => {
+  res.redirect("/");
+});
+app.get("/register", (req, res) => {
+  res.send("Register");
+});
+app.post("/register", (req, res) => {
+  res.redirect("/");
+});
+app.get("/add", (req, res) => {
+  res.send("Add note");
+});
+app.post("/add", (req, res) => {
+  res.redirect("/");
+});
+app.get("/details/:noteId", (req, res) => {
+  res.send("Details of note");
+});
+app.get("/edit/:noteId", (req, res) => {
+  res.send("Edit note");
+});
+app.post("/edit/:noteId", (req, res) => {
+  res.redirect("/");
+});
+app.get("/delete/:noteId", (req, res) => {
+  res.redirect("/");
 });
 
 app.listen(PORT, () => console.log(`Server listening on port ${PORT}`));
