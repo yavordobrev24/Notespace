@@ -2,6 +2,7 @@ const express = require("express");
 const handlebars = require("express-handlebars");
 const mongoose = require("mongoose");
 const app = express();
+const noteService = require("./services/noteService");
 
 const { CONNECTION_STR, PORT } = require("./constants");
 
