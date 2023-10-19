@@ -18,7 +18,13 @@ async function connectDb() {
 connectDb();
 
 app.get("/", (req, res) => {
-  res.send("Home");
+  res.render("home");
+});
+
+app.get("/notes", async (req, res) => {
+  const userId = 1;
+  const notes = await noteService.getAllNotes(userId);
+  res.render("notes", { notes });
 });
 app.get("/login", (req, res) => {
   res.send("Login");
