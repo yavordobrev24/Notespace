@@ -3,7 +3,7 @@ const handlebars = require("express-handlebars");
 const mongoose = require("mongoose");
 const app = express();
 const noteService = require("./services/noteService");
-
+const userService = require("./services/userService");
 const { CONNECTION_STR, PORT } = require("./constants");
 
 app.use(express.urlencoded({ extended: false }));
@@ -34,9 +34,13 @@ app.post("/login", (req, res) => {
   res.redirect("/");
 });
 app.get("/register", (req, res) => {
-  res.send("Register");
+  res.render("users/register");
 });
-app.post("/register", (req, res) => {
+app.post("/register", async (req, res) => {
+  const { email, password, repeatPassword, check } = req.body;
+  console.log(email, password, repeatPassword, check);
+  const payload = { email, password };
+  await userService.register(payload);
   res.redirect("/");
 });
 app.get("/add", (req, res) => {
