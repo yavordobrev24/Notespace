@@ -27,7 +27,7 @@ Follow these instructions to get Notespace up and running on your local machine.
 1. Clone this repository to your local machine:
 
    ```bash
-   git clone https://github.com/yourusername/notespace.git
+   git clone https://github.com/yavordobrev24/Notespace
    ```
 
 2. Navigate to the project directory:
@@ -42,25 +42,13 @@ Follow these instructions to get Notespace up and running on your local machine.
    npm install
    ```
 
-4. Create a `.env` file in the project root directory and configure the following environment variables:
-
-   ```env
-   PORT=3000
-   SESSION_SECRET=your_session_secret
-   DB_URI=your_database_uri
-   ```
-
-   - `PORT` is the port where the application will run.
-   - `SESSION_SECRET` is a secret key for session management.
-   - `DB_URI` is the connection URI for your database.
-
-5. Start the application:
+4. Start the application:
 
    ```bash
    npm start
    ```
 
-6. Open your web browser and access `http://localhost:3000` to use Notespace.
+5. Open your web browser and access `http://localhost:3000` to use Notespace.
 
 ## Usage
 
