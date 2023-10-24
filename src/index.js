@@ -4,11 +4,15 @@ const mongoose = require("mongoose");
 const app = express();
 const { CONNECTION_STR, PORT } = require("./constants");
 const routes = require("./routes");
-
-app.use(express.urlencoded({ extended: false }));
+const { auth } = require("./middlewares/authMiddleware");
+const cookieParser = require("cookie-parser");
 app.engine("hbs", handlebars.engine({ extname: "hbs" }));
 app.set("view engine", "hbs");
 app.set("views", "src/views");
+
+app.use(express.urlencoded({ extended: false }));
+app.use(cookieParser());
+app.use(auth);
 
 async function connectDb() {
   await mongoose.connect(CONNECTION_STR);

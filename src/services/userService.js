@@ -5,11 +5,6 @@ const { SECRET } = require("../constants");
 
 exports.register = async (userData) => {
   const user = await User.create(userData);
-  const isValid = await bcrypt.compare(userData.password, user.password);
-
-  if (!isValid) {
-    throw new Error("Invalid email or password!");
-  }
 
   const payload = { _id: user._id, email: user.email };
   const token = await jwt.sign(payload, SECRET, { expiresIn: "3d" });

@@ -9,9 +9,8 @@ router.post("/login", async (req, res) => {
   const { email, password } = req.body;
   try {
     const token = await userService.login(email, password);
-
     res.cookie("auth", token, { httpOnly: true });
-    res.redirect("/notes/");
+    res.redirect("/notes");
   } catch (error) {
     const errorMessages = extractErrorMsgs(error);
     res.status(404).render("users/login", { errorMessages });
