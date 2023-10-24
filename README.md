@@ -1,6 +1,3 @@
-Certainly! Here's the README.md file with a copyright notice added:
-
-````markdown
 # Notespace - Your Personal Online Diary
 
 Welcome to Notespace, your go-to platform for keeping track of your thoughts, ideas, and daily experiences. Notespace is a web-based diary application built with Node.js and the Handlebars view engine. With Notespace, you can create, update, and delete notes, as well as choose to publish or unpublish them for other users to see. Share your emotions and memories in a secure and private online space.
@@ -32,7 +29,6 @@ Follow these instructions to get Notespace up and running on your local machine.
    ```bash
    git clone https://github.com/yourusername/notespace.git
    ```
-````
 
 2. Navigate to the project directory:
 
