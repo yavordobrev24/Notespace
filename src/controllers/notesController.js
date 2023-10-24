@@ -5,7 +5,7 @@ router.get("/", async (req, res) => {
   const userId = 1;
   //const notes = await noteService.getAllNotes(userId);
   //res.render("notes", { notes });
-  res.send("OK");
+  res.render("notes");
 });
 router.get("/add", (req, res) => {
   res.send("Add note");
