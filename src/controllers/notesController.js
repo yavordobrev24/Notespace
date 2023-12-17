@@ -1,16 +1,14 @@
 const router = require("express").Router();
 const noteService = require("../services/noteService");
 
-router.get("/", async (req, res) => {
-  const userId = 1;
-  //const notes = await noteService.getAllNotes(userId);
-  //res.render("notes", { notes });
-  res.render("notes");
-});
 router.get("/add", (req, res) => {
-  res.send("Add note");
+  res.render("add");
 });
-router.post("/add", (req, res) => {
+router.post("/add", async (req, res) => {
+  const { title, image, description } = req.body;
+  const payload = { title, image, description, owner: res.locals.user._id };
+  await noteService.createNote(payload);
+
   res.redirect("/");
 });
 router.get("/details/:noteId", (req, res) => {
