@@ -17,16 +17,16 @@ router.post("/add", async (req, res) => {
 
   res.redirect("/");
 });
-router.get("/details/:noteId", (req, res) => {
+router.get("/:noteId/details", (req, res) => {
   res.send("Details of note");
 });
-router.get("/edit/:noteId", (req, res) => {
+router.get("/:noteId/edit", (req, res) => {
   res.send("Edit note");
 });
-router.post("/edit/:noteId", (req, res) => {
+router.post("/:noteId/edit", (req, res) => {
   res.redirect("/");
 });
-router.get("/delete/:noteId", (req, res) => {
+router.get("/:noteId/delete/", (req, res) => {
   res.redirect("/");
 });
 module.exports = router;
