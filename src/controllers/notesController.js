@@ -6,7 +6,13 @@ router.get("/add", (req, res) => {
 });
 router.post("/add", async (req, res) => {
   const { title, image, description } = req.body;
-  const payload = { title, image, description, owner: res.locals.user._id };
+  const payload = {
+    title,
+    image,
+    description,
+    owner: res.locals.user._id,
+    date: Number(Date.now()),
+  };
   await noteService.createNote(payload);
 
   res.redirect("/");

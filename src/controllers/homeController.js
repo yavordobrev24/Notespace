@@ -5,8 +5,8 @@ const router = require("express").Router();
 router.get("/", async (req, res) => {
   if (res.locals.isAuthenticated) {
     const notes = await getAllNotes(res.locals.user._id);
-
-    return res.render("notes", { notes });
+    const currentTime = Number(Date.now());
+    return res.render("notes", { notes, currentTime });
   }
   res.render("home");
 });
