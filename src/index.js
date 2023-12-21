@@ -12,8 +12,17 @@ app.set("view engine", "hbs");
 app.set("views", "src/views");
 
 app.use(
-  "/bootstrap",
+  "/bootstrap/css",
   express.static(path.join(__dirname, "../node_modules/bootstrap/dist/css"))
+);
+app.use(
+  "/popper",
+  express.static(path.join(__dirname, "../node_modules/@popperjs/core/dist/"))
+);
+
+app.use(
+  "/bootstrap/js",
+  express.static(path.join(__dirname, "../node_modules/bootstrap/dist/js"))
 );
 
 app.use(express.static(path.join(__dirname, "public")));

@@ -1,8 +1,7 @@
 :root {
     --main-background-color: #0EAD9D;
   }
-  
-  body {
+body.home {
     margin: 0;
     padding: 0;
     font-family: Arial, sans-serif;

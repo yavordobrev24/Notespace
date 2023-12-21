@@ -1,6 +1,11 @@
 const router = require("express").Router();
 const noteService = require("../services/noteService");
 
+router.get("/", async (req, res) => {
+  const notes = await noteService.getAllNotes(res.locals.user._id);
+
+  return res.render("notes", { notes });
+});
 router.get("/add", (req, res) => {
   res.render("add");
 });
