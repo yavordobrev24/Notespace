@@ -6,10 +6,17 @@ const { CONNECTION_STR, PORT } = require("./constants");
 const routes = require("./routes");
 const { auth } = require("./middlewares/authMiddleware");
 const cookieParser = require("cookie-parser");
+const path = require("path");
 app.engine("hbs", handlebars.engine({ extname: "hbs" }));
 app.set("view engine", "hbs");
 app.set("views", "src/views");
 
+app.use(
+  "/bootstrap",
+  express.static(path.join(__dirname, "../node_modules/bootstrap/dist/css"))
+);
+
+app.use(express.static(path.join(__dirname, "public")));
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(auth);

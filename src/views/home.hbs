@@ -1,25 +1,42 @@
-<body class="text-center bg-success h-100 d-flex align-items-center justify-content-center">
-    
-    <main role="main" class="inner cover text-light">
-      <h1 class="cover-heading">Notespace</h1>
-      <p class="lead">In which you can write as many notes as you would like
-        to!
-      </p>
-      <br>
-      <p class="lead">
-        <a href="/users/register" class="btn btn-lg bg-light">Sign up</a>
-        <a href="/users/login" class="btn btn-lg bg-light">Login</a>
-      </p>
-    </main>
+<body class="container-fluid px-0">
+  <nav class="navbar navbar-expand-lg nav-bg">
+    <div class="container-fluid">
+      <a class="navbar-brand fs-3 text-light ps-4" href="/">Notespace</a>
+      <div class="d-flex justify-content-start">
+        <ul
+          class="d-flex justify-content-start align-items-center gap-3 mb-0 ps-3"
+          style="padding-left: 15px; padding-right: 15px;"
+        >
+          <li class="nav-item"><a
+              href="/users/login"
+              class="nav-link text-light fs-5"
+            >Log in</a></li>
+          <li class="nav-item"><a
+              href="/users/signup"
+              class="nav-link text-light fs-5"
+            >Sign up</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
 
-    <footer class="mastfoot mt-auto">
-    </footer>
+  <div class="hero-bg">
+    <div
+      class="hero-content d-flex align-items-center justify-content-center flex-column"
+    >
+      <h1 class="display-5 fw-bold text-white">Your Personal Web Diary</h1>
+      <div class="col-lg-6 mx-auto">
+        <p class="lead mb-4 text-white">A place to write and save your thoughts,
+          ideas, and notes securely.</p>
+      </div>
+      <div class="d-grid gap-2 d-sm-flex justify-content-sm-center">
+        <a href="/users/signup">
+          <button
+            type="button"
+            class="btn hero-button-bg btn-lg px-4 gap-3 text-white"
+          >Get Started</button></a>
+      </div>
+    </div>
   </div>
-
-  <script
-    src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
-    integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
-    crossorigin="anonymous"
-  ></script>
 
 </body>

@@ -10,29 +10,29 @@ router.post("/login", async (req, res) => {
   try {
     const token = await userService.login(email, password);
     res.cookie("auth", token, { httpOnly: true });
-    res.redirect("/");
+    res.redirect("/notes");
   } catch (error) {
     const errorMessages = extractErrorMsgs(error);
     res.status(404).render("users/login", { errorMessages });
   }
 });
 
-router.get("/register", (req, res) => {
-  res.render("users/register");
+router.get("/signup", (req, res) => {
+  res.render("users/signup");
 });
-router.post("/register", async (req, res) => {
+router.post("/signup", async (req, res) => {
   const { email, password, repeatPassword } = req.body;
   try {
-    const token = await userService.register({
+    const token = await userService.signup({
       email,
       password,
       repeatPassword,
     });
     res.cookie("auth", token, { httpOnly: true });
-    res.redirect("/");
+    res.redirect("/notes");
   } catch (error) {
     const errorMessages = extractErrorMsgs(error);
-    res.status(404).render("users/register", { errorMessages });
+    res.status(404).render("users/signup", { errorMessages });
   }
 });
 router.get("/logout", (req, res) => {

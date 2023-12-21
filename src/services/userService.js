@@ -3,7 +3,7 @@ const bcrypt = require("bcrypt");
 const jwt = require("../utils/jwt");
 const { SECRET } = require("../constants");
 
-exports.register = async (userData) => {
+exports.signup = async (userData) => {
   const user = await User.create(userData);
   const isValid = await bcrypt.compare(userData.password, user.password);
 

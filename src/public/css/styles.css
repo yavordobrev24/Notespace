@@ -1,0 +1,46 @@
+:root {
+    --main-background-color: #0EAD9D;
+  }
+  
+  body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    overflow: hidden;
+  }
+  
+  a {
+    text-decoration: none !important;
+  }
+  
+  li {
+    list-style-type: none;
+  }
+  
+  
+  .py-6 {
+    padding-top: 7.5rem !important;
+    padding-bottom: 7.5rem !important;
+  }
+  
+  .nav-bg,
+  .feature-bg,
+  .hero-button-bg,
+  .btn-back,.btn-submit {
+    background-color: var(--main-background-color) !important;
+  }
+  .hero-bg {
+    position: relative;
+    height: 100vh;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.8)), url("https://hscaz.com/wp-content/uploads/2020/01/Clinical-Documentation-Blog-Post.jpg");
+    background-size: cover;
+    background-position: center;
+  }
+  .hero-content {
+    position: absolute;
+    top: 40%; 
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    width: 100%;
+  }
