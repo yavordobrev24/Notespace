@@ -1,6 +1,8 @@
+const { guestOnly } = require("../middlewares/authMiddleware");
+
 const router = require("express").Router();
 
-router.get("/", async (req, res) => {
+router.get("/", guestOnly, async (req, res) => {
   res.render("home");
 });
 

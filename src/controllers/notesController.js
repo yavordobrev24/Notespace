@@ -6,21 +6,19 @@ router.get("/", async (req, res) => {
 
   return res.render("notes", { notes });
 });
-router.get("/add", (req, res) => {
-  res.render("add");
+router.get("/create", (req, res) => {
+  res.render("create");
 });
-router.post("/add", async (req, res) => {
-  const { title, image, description } = req.body;
+router.post("/create", async (req, res) => {
+  const { title, content } = req.body;
   const payload = {
     title,
-    image,
-    description,
+    content,
     owner: res.locals.user._id,
-    date: Number(Date.now()),
   };
   await noteService.createNote(payload);
 
-  res.redirect("/");
+  res.redirect("/notes");
 });
 router.get("/:noteId/details", (req, res) => {
   res.send("Details of note");

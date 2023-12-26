@@ -1,10 +1,12 @@
 :root {
     --main-background-color: #0EAD9D;
   }
-body.home {
+body{
     margin: 0;
     padding: 0;
     font-family: Arial, sans-serif;
+  }
+  .home{
     overflow: hidden;
   }
   
@@ -21,11 +23,14 @@ body.home {
     padding-top: 7.5rem !important;
     padding-bottom: 7.5rem !important;
   }
+  .pe-6{
+    padding-right: 7.5rem !important;
+  }
   
   .nav-bg,
   .feature-bg,
   .hero-button-bg,
-  .btn-back,.btn-submit {
+  .btn-back,.btn-submit,.dropdown-color,.sidebar,.btn-color {
     background-color: var(--main-background-color) !important;
   }
   .hero-bg {
@@ -42,4 +47,26 @@ body.home {
     transform: translate(-50%, -50%);
     text-align: center;
     width: 100%;
+  }
+  .sidebar{
+    height:100vh;
+  }
+  .notes,.create{
+    overflow-y:scroll;
+  }
+  
+  .resizable-textarea {
+    resize: none;
+    overflow: hidden;
+  }
+  button.hover-main-color:hover{
+    color: #534b4b!important;
+  }
+  ::-webkit-input-placeholder{
+    color: #534b4b !important;
+  }
+  .card-body p{
+    height:70px;
+    width:300px;
+    overflow:hidden;
   }

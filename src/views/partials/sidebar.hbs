@@ -1,0 +1,66 @@
+<div
+  class="d-flex flex-column flex-shrink-0 p-3 text-white sidebar"
+  style="max-width: 280px;"
+>
+  <a
+    href="/notes"
+    class="d-flex align-items-center mb-3 mb-md-0 text-white text-decoration-none"
+  >
+    <span class="fs-4 fw-bold">Notespace</span>
+  </a>
+  <hr />
+  <ul class="nav nav-pills flex-column mb-auto">
+    <li class="nav-item">
+      <a href="/notes" class="nav-link text-white" aria-current="page">
+        Notes
+      </a>
+    </li>
+    <li>
+      <a href="/notes/create" class="nav-link text-white">
+        Create new note
+      </a>
+    </li>
+    <li>
+      <div class="input-group my-3">
+        <form method="GET">
+          <input
+            type="text"
+            class="form-control main-color"
+            placeholder="Search note..."
+          />
+          <button
+            type="button"
+            class="btn btn-outline-light my-2 hover-main-color"
+          >Search</button>
+        </form>
+      </div></li>
+  </ul>
+  <hr />
+  <div class="dropdown">
+    <a
+      href="#"
+      class="d-flex align-items-center text-white text-decoration-none dropdown-toggle"
+      id="dropdownUser1"
+      data-bs-toggle="dropdown"
+      aria-expanded="false"
+    >
+      <img
+        src="https://github.com/mdo.png"
+        alt=""
+        width="32"
+        height="32"
+        class="rounded-circle me-2"
+      />
+      <strong>User</strong>
+    </a>
+    <ul
+      class="dropdown-menu dropdown-menu-dark text-small shadow"
+      aria-labelledby="dropdownUser1"
+    >
+      <li><a class="dropdown-item" href="/settings">Settings</a></li>
+      <li><a class="dropdown-item" href="/profile">Profile</a></li>
+      <li><hr class="dropdown-divider" /></li>
+      <li><a class="dropdown-item" href="/logout">Sign out</a></li>
+    </ul>
+  </div>
+</div>
