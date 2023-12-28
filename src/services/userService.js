@@ -6,7 +6,7 @@ const { SECRET } = require("../constants");
 exports.signup = async (userData) => {
   const user = await User.create(userData);
   const isValid = await bcrypt.compare(userData.repeatPassword, user.password);
-  console.log(user);
+
   if (!isValid) {
     await User.findByIdAndDelete(user._id);
     throw new Error("Invalid email or password!");

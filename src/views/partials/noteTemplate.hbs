@@ -1,18 +1,18 @@
-<div class="col-sm-12 col-md-6 col-lg-4">
-  <div class="card shadow-sm">
-    <div class="card-body">
+<div class="col-sm-12 col-md-6 col-lg-4" id={{_id}}>
+  <div class="card shadow-sm" id={{_id}}>
+    <div class="card-body" id={{_id}}>
       <h5>{{title}}</h5>
       <p class="card-text">{{content}}</p>
       <div class="d-flex justify-content-between align-items-center">
         <div class="btn-group">
-          <button
-            type="button"
+          <a
             class="btn btn-sm btn-outline-secondary"
-          >View</button>
-          <button
-            type="button"
+            href="/notes/details/{{_id}}"
+          >View</a>
+          <a
             class="btn btn-sm btn-outline-secondary"
-          >Edit</button>
+            href="/notes/edit/{{_id}}"
+          >Edit</a>
         </div>
         <!--<small class="text-body-secondary">9 mins</small>-->
       </div>

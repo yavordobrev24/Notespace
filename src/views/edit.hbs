@@ -1,8 +1,8 @@
 <body class="d-flex">
   {{>sidebar email=email}}
   <div class="container p-5 create">
-    <h1 class="mb-5">Create New Note</h1>
-    <form id="noteForm" action="/notes/create" method="POST">
+    <h1 class="mb-5">Edit Note</h1>
+    <form id="noteForm" action="/notes/edit/:id" method="POST">
       <div class="mb-3">
         <label for="exampleInputTitle" class="form-label">Note Title</label>
         <input
@@ -13,6 +13,7 @@
           aria-describedby="titleHelp"
           maxlength="30"
           style="width:400px"
+          value={{title}}
         />
         <small id="titleHelp" class="form-text text-muted">Please enter a short
           title.</small>
@@ -25,7 +26,7 @@
           id="exampleInputContent"
           rows="5"
           style="width:600px;"
-        ></textarea>
+        >{{content}}</textarea>
       </div>
       <button type="submit" class="btn btn-color text-white">Save Note</button>
     </form>

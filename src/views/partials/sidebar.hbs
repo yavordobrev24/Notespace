@@ -22,14 +22,17 @@
     </li>
     <li>
       <div class="input-group my-3">
-        <form method="GET">
+        <form method="GET" action="/notes">
           <input
             type="text"
+            name="search"
+            id="search"
             class="form-control main-color"
             placeholder="Search note..."
+            value="{{search}}"
           />
           <button
-            type="button"
+            type="submit"
             class="btn btn-outline-light my-2 hover-main-color"
           >Search</button>
         </form>
@@ -51,13 +54,13 @@
         height="32"
         class="rounded-circle me-2"
       />
-      <strong>User</strong>
+      <strong>{{email}}</strong>
     </a>
     <ul
       class="dropdown-menu dropdown-menu-dark text-small shadow"
       aria-labelledby="dropdownUser1"
     >
-      <li><a class="dropdown-item" href="/settings">Settings</a></li>
+      <!--<li><a class="dropdown-item" href="/settings">Settings</a></li>-->
       <li><a class="dropdown-item" href="/profile">Profile</a></li>
       <li><hr class="dropdown-divider" /></li>
       <li><a class="dropdown-item" href="/logout">Sign out</a></li>
