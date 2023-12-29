@@ -10,6 +10,10 @@ const noteSchema = new mongoose.Schema({
     type: mongoose.Types.ObjectId,
     ref: "User",
   },
+  date: {
+    type: Object,
+    required: true,
+  },
 });
 
 const Note = mongoose.model("Note", noteSchema);

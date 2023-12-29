@@ -11,13 +11,11 @@
           class="form-control"
           id="exampleInputTitle"
           aria-describedby="titleHelp"
-          maxlength="30"
+          maxlength="50"
           style="width:400px"
-          value={{title}}
+          value="{{note.title}}"
+          required
         />
-        <small id="titleHelp" class="form-text text-muted">Please enter a short
-          title.</small>
-      </div>
       <div class="mb-3">
         <label for="exampleInputContent" class="form-label">Note Content</label>
         <textarea
@@ -26,9 +24,10 @@
           id="exampleInputContent"
           rows="5"
           style="width:600px;"
-        >{{content}}</textarea>
+          required
+        >{{note.content}}</textarea>
       </div>
-      <button type="submit" class="btn btn-color text-white">Save Note</button>
+      <button type="submit" class="btn color-primary text-white">Save Note</button>
     </form>
   </div>
 
@@ -37,38 +36,43 @@
       textarea.style.height = "auto";
       textarea.style.height = textarea.scrollHeight + "px";
     }
-    const resizableTextAreas = document.querySelectorAll('.resizable-textarea');
 
-    resizableTextAreas.forEach(textarea => {
-      textarea.addEventListener('input', function () {
-        adjustTextAreaHeight(this);
-      });
+    document.addEventListener("DOMContentLoaded", function() {
+      const resizableTextAreas = document.querySelectorAll('.resizable-textarea');
 
-      textarea.addEventListener('mousedown', function (event) {
-        if (event.target === this && event.offsetX > this.clientWidth) {
-          event.preventDefault();
-          this.mouseDown = true;
-          this.startX = event.clientX;
-          this.startWidth = this.clientWidth;
-          this.addEventListener('mousemove', this.resizeTextArea);
-          this.addEventListener('mouseup', () => {
-            this.mouseDown = false;
-            this.removeEventListener('mousemove', this.resizeTextArea);
-          });
-        }
-      });
+      resizableTextAreas.forEach(textarea => {
+        adjustTextAreaHeight(textarea); // Automatically adjust textarea height on page load
 
-      textarea.resizeTextArea = function (event) {
-        if (this.mouseDown) {
-          const newWidth = this.startWidth + (event.clientX - this.startX);
-          if (newWidth > this.offsetWidth) {
-            this.style.width = newWidth + 'px';
+        textarea.addEventListener('input', function () {
+          adjustTextAreaHeight(this);
+        });
+
+        textarea.addEventListener('mousedown', function (event) {
+          if (event.target === this && event.offsetX > this.clientWidth) {
+            event.preventDefault();
+            this.mouseDown = true;
+            this.startX = event.clientX;
+            this.startWidth = this.clientWidth;
+            this.addEventListener('mousemove', this.resizeTextArea);
+            this.addEventListener('mouseup', () => {
+              this.mouseDown = false;
+              this.removeEventListener('mousemove', this.resizeTextArea);
+            });
           }
-        }
-      };
+        });
 
-      textarea.addEventListener('mouseleave', function () {
-        this.mouseDown = false;
+        textarea.resizeTextArea = function (event) {
+          if (this.mouseDown) {
+            const newWidth = this.startWidth + (event.clientX - this.startX);
+            if (newWidth > this.offsetWidth) {
+              this.style.width = newWidth + 'px';
+            }
+          }
+        };
+
+        textarea.addEventListener('mouseleave', function () {
+          this.mouseDown = false;
+        });
       });
     });
   </script>

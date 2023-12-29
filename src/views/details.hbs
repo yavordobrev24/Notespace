@@ -6,9 +6,26 @@
         <h3>{{note.title}}</h3>
       </div>
       <div class="mb-3">
-      <p>{{note.content}}</p>
+        <textarea
+          name="content"
+          class="form-control resizable-textarea"
+          id="exampleInputContent"
+          rows="5"
+          style="width:600px;"
+          disabled
+        >{{note.content}}</textarea>
       </div>
   </div>
 
+  <script>
+    function adjustTextAreaHeight(textarea) {
+      textarea.style.height = "auto";
+      textarea.style.height = textarea.scrollHeight + "px";
+    }
 
+    document.addEventListener("DOMContentLoaded", function() {
+      const resizableTextarea = document.querySelector('.resizable-textarea');
+      adjustTextAreaHeight(resizableTextarea); // Automatically adjust textarea height on page load
+    });
+  </script>
 </body>

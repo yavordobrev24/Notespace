@@ -35,6 +35,9 @@ router.post("/signup", guestOnly, async (req, res) => {
     res.status(404).render("users/signup", { errorMessages });
   }
 });
+router.get("/profile", isAuth, async (req, res) => {
+  res.render("profile");
+});
 router.get("/logout", isAuth, (req, res) => {
   res.clearCookie("auth");
   res.redirect("/");
